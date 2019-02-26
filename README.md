@@ -55,4 +55,5 @@ frida -U -l _agent.js --no-pause -f <your package_name>
 # Contact
 
 Feel free to contact me on Twitter : [Areizen](https://twitter.com/RomainKRAFT)
-or by email : Romain KRAFT <romain.kraft@protonmail.com>
+
+or by email at : <romain.kraft@protonmail.com>
