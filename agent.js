@@ -17,7 +17,11 @@ function hook_jni(library_name, function_name){
             Interceptor.attach(symbol.address,{
                 onEnter: function(args){
                    
-                    jnienv_addr = Memory.readPointer(args[0])
+                    var jnienv_addr = 0x0
+                    Java.perform(function(){
+                        jnienv_addr = Java.vm.getEnv().handle.readPointer();
+                    });
+                        
                    
                     console.log("[+] Hooked successfully, JNIEnv base adress :" + jnienv_addr)
                     
