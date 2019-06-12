@@ -242,7 +242,7 @@ const jni_struct_array = [
 Calculate the given funcName address from the JNIEnv pointer
 */
 function getJNIFunctionAdress(jnienv_addr,func_name){
-    offset = jni_struct_array.indexOf(func_name) * Process.pointerSize
+    var offset = jni_struct_array.indexOf(func_name) * Process.pointerSize
     
     // console.log("offset : 0x" + offset.toString(16))
     
@@ -256,7 +256,7 @@ function hook_all(jnienv_addr){
         // Calculating the address of the function
         if(!func_name.includes("reserved"))
        {
-            func_addr = getJNIFunctionAdress(jnienv_addr,func_name)
+            var func_addr = getJNIFunctionAdress(jnienv_addr,func_name)
             Interceptor.attach(func_addr,{
                 onEnter: function(args){
                     console.log("[+] Entered : " + func_name)
