@@ -1,8 +1,8 @@
 const jni = require("./utils/jni_struct.js")
 
-library_name = "" // ex: libsqlite.so
-function_name = "" // ex: JNI_OnLoad
-library_loaded = 0
+var library_name = "" // ex: libsqlite.so
+var function_name = "" // ex: JNI_OnLoad
+var library_loaded = 0
 
 
 // Function that will process the JNICall after calculating it from
@@ -66,7 +66,7 @@ if(library_name == "" || function_name == ""){
 Interceptor.attach(Module.findExportByName(null, 'android_dlopen_ext'),{
     onEnter: function(args){
         // first arg is the path to the library loaded
-        library_path = Memory.readCString(args[0])
+        var library_path = Memory.readCString(args[0])
 
         if( library_path.includes(library_name)){
             console.log("[...] Loading library : " + library_path)
