@@ -52,6 +52,10 @@ And launch it :
 frida -U -l _agent.js --no-pause -f <your package_name>
 ```
 
+# Example of usage
+
+[https://www.aperikube.fr/docs/aperictf_2019/my_backdoored_gallery/](https://www.aperikube.fr/docs/aperictf_2019/my_backdoored_gallery/)
+
 # Contact
 
 Feel free to contact me on Twitter : [Areizen](https://twitter.com/RomainKRAFT)
