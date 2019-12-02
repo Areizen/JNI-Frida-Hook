@@ -8,6 +8,7 @@ It also provide a way to easily hook them
 ```
 pip install frida-tools --user
 npm install frida-compile -g
+npm install frida-compile
 ```
 
 ## Usage
