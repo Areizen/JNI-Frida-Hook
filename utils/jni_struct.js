@@ -241,7 +241,7 @@ const jni_struct_array = [
 /*
 Calculate the given funcName address from the JNIEnv pointer
 */
-function getJNIFunctionAdress(jnienv_addr,func_name){
+export function getJNIFunctionAdress(jnienv_addr,func_name){
     var offset = jni_struct_array.indexOf(func_name) * Process.pointerSize
     
     // console.log("offset : 0x" + offset.toString(16))
@@ -251,7 +251,7 @@ function getJNIFunctionAdress(jnienv_addr,func_name){
 
 
 // Hook all function to have an overview of the function called
-function hook_all(jnienv_addr){
+export function hook_all(jnienv_addr){
     jni_struct_array.forEach(function(func_name){
         // Calculating the address of the function
         if(!func_name.includes("reserved"))
@@ -265,6 +265,3 @@ function hook_all(jnienv_addr){
         }
     })
 }
-
-exports.getJNIFunctionAdress = getJNIFunctionAdress
-exports.hook_all = hook_all

@@ -1,4 +1,4 @@
-const jni = require("./utils/jni_struct.js")
+import * as jni from "./utils/jni_struct.js";
 
 var library_name = "" // ex: libsqlite.so
 var function_name = "" // ex: JNI_OnLoad
